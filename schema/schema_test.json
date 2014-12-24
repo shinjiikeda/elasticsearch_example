@@ -1,0 +1,61 @@
+{
+    "test": {
+        "dynamic": "strict",
+	"properties": {
+	    "id": {
+		"type": "string"
+	    },
+            "_timestamp" : {
+                "enabled" : true
+            },
+	    "title": {
+		"type": "string",
+		"index": "analyzed",
+		"index_analyzer": "jp_index_analyzer",
+		"search_analyzer": "jp_search_analyzer",
+		"term_vector":"with_positions_offsets",
+                "norms" : {
+                    "enabled" : false
+                },
+                "term_statistics": false,
+		"store": "yes"
+	    },
+	    "desc": {
+		"type": "string",
+		"index": "analyzed",
+                "index_analyzer": "jp_index_analyzer",
+                "search_analyzer": "jp_search_analyzer",
+		"term_vector":"with_positions_offsets",
+                "term_statistics": false,
+		"store": "yes"
+	    },
+	    "keys": {
+		"type": "string",
+		"index": "analyzed",
+                "index_analyzer": "jp_index_analyzer",
+                "search_analyzer": "jp_search_analyzer",
+		"term_vector":"with_positions",
+                "norms" : {
+                    "enabled" : false
+                },
+                "term_statistics": false,
+		"store": "yes"
+	    },
+	    "price": {
+		"type": "integer",
+		"index": "not_analyzed",
+		"store": "yes"
+	    },
+	    "url": {
+		"type": "string",
+		"index": "no",
+		"store": "yes"
+	    },
+            "score": {
+                "type": "float",
+                "index": "not_analyzed",
+                "store": "yes"
+            }
+	}
+    }
+}

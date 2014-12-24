@@ -1,0 +1,63 @@
+{
+    "index" : {
+	"analysis" : {
+	    "analyzer" : {
+                "jp_search_analyzer" : {
+                    "type" : "custom",
+                    "tokenizer" : "kuromoji_user_dict",
+                    "filter": ["jp_synonym_filter"],
+                    "char_filter": ["jp_mapping", "my_mapping"]
+                },
+                "jp_index_analyzer" : {
+                    "type" : "custom",
+                    "tokenizer" : "kuromoji_user_dict",
+                    "char_filter": ["jp_mapping", "my_mapping"]
+                },
+                "ngram_search_analyzer" : {
+                    "tokenizer" : "ngram_search_tokenizer",
+                    "filter": ["jp_synonym_filter"],
+                    "char_filter": ["jp_mapping", "my_mapping"]
+                },
+		"ngram_index_analyzer" : {
+		    "tokenizer" : "ngram_index_tokenizer",
+		    "char_filter": ["jp_mapping", "my_mapping"]
+		}
+            },
+            "tokenizer" : {
+                "kuromoji_user_dict" : {
+                   "type" : "kuromoji_tokenizer",
+                   "mode" : "search",
+                   "discard_punctuation" : "false",
+                   "user_dictionary" : "userdict_jp.txt"
+                },
+                "ngram_index_tokenizer" : {
+                    "type" : "nGram",
+                    "min_gram" : "1",
+                    "max_gram" : "2",
+                    "token_chars": [ "letter", "digit" ]
+                },
+                "ngram_search_tokenizer" : {
+                    "type" : "nGram",
+                    "max_gram" : "2",
+                    "token_chars": [ "letter", "digit" ]
+                }
+	    },
+            "filter": {
+                "jp_synonym_filter": {
+                    "type": "synonym", 
+                    "synonyms_path": "synonym_jp.txt"
+                }
+            },
+	    "char_filter" : {
+		"jp_mapping" : {
+		    "type" : "mapping",
+		    "mappings_path" : "mapping_jp.txt"
+		},
+                "my_mapping" : {
+                    "type" : "mapping",
+                    "mappings" : ["・=> "]
+                }
+	    }
+	}
+    }
+}
