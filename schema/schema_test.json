@@ -2,8 +2,10 @@
     "test": {
         "dynamic": "strict",
 	"properties": {
-	    "id": {
-		"type": "string"
+	    "_id": {
+		"type": "string",
+                "index" : "not_analyzed",
+                "store" : true
 	    },
             "_timestamp" : {
                 "enabled" : true
