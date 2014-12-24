@@ -1,0 +1,77 @@
+{
+  "from": 0,
+  "size": 10,
+  "query": {
+    "function_score": {
+      "query": {
+        "query_string": {
+          "query": "sony ヘッドフォン",
+          "fields": [
+            "title^10",
+            "desc^0.01",
+            "keys"
+          ],
+          "use_dis_max": true,
+          "default_operator": "AND",
+          "auto_generate_phrase_queries": true
+        }
+      },
+      "script_score": {
+        "script": "log(_score + 1.0) + 10.0 * log(doc['score'].value+1.0)"
+      },
+      "boost_mode": "replace"
+    }
+  },
+  "filter": {
+    "range": {
+      "price": {
+        "gte": 10,
+        "lte": 100000
+      }
+    }
+  },
+  "rescore": {
+    "window_size": 20,
+    "query": {
+      "score_mode": "total",
+      "rescore_query": {
+        "function_score": {
+          "script_score": {
+            "params": {
+              "from": 1000,
+              "to": 50000,
+              "w": 10
+            },
+            "script": "w * (1/(1+exp((from - doc['price'].value) / 1000))-1/(1+exp((to - doc['price'].value) / 10000)))"
+          }
+        }
+      }
+    }
+  },
+  "highlight": {
+    "fields": {
+      "title": {
+        "pre_tags": [
+          "<b>"
+        ],
+        "post_tags": [
+          "</b>"
+        ],
+        "fragment_size": 30,
+        "number_of_fragments": 1,
+        "no_match_size": 30
+      },
+      "desc": {
+        "pre_tags": [
+          "<b>"
+        ],
+        "post_tags": [
+          "</b>"
+        ],
+        "fragment_size": 100,
+        "number_of_fragments": 1,
+        "no_match_size": 100
+      }
+    }
+  }
+}
