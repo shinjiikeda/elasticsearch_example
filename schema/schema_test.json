@@ -7,9 +7,6 @@
                 "index" : "not_analyzed",
                 "store" : true
 	    },
-            "_timestamp" : {
-                "enabled" : true
-            },
 	    "title": {
 		"type": "string",
 		"index": "analyzed",
