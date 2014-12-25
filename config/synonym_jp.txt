@@ -17,3 +17,30 @@ softbank,ソフトバンク
 microsoft,マイクロソフト
 apple,アップル
 baidu,バイドゥ
+fujitsu,富士通
+tamiya,タミヤ,田宮
+京商,kyosho
+roland,ローランド
+zoom,ズーム
+yamaha,ヤマハ
+fender,フェンダー
+gibson,ギブソン
+security,セキュリティ
+kaspersky,カスペルスキー
+jazz,ジャズ
+classic,クラシック
+rock,ロック
+metal,メタル
+blues,ブルース
+honda,ホンダ
+nissan,日産
+toyota,トヨタ
+iphone,アイ フォーン
+スマホ,スマート フォン
+アナ 雪,アナ と 雪 の 女王
+もも クロ,もも いろ クローバー
+ドラクエ,ドラゴン クエスト
+ドラえもん,どら えも ん
+ibm,アイ ビー エム
+ヘッドホン,ヘッド フォン
+イヤ ホン,イヤ フォン
