@@ -1,5 +1,16 @@
 {
     "index" : {
+        "settings": {
+            "number_of_shards":   1, 
+            "number_of_replicas": 1
+        },
+        "similarity": {
+            "my_bm25": {
+                "type": "BM25",
+                "k1": 0.5,
+                "b": 0
+             }
+        },
 	"analysis" : {
 	    "analyzer" : {
                 "jp_search_analyzer" : {

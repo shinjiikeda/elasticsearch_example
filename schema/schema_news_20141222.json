@@ -1,15 +1,12 @@
 {
-    "test": {
+    "20141222": {
         "dynamic": "strict",
 	"properties": {
 	    "_id": {
 		"type": "string",
-                "index" : "not_analyzed",
-                "store" : true
+                "index": "not_analyzed",
+                "store": true
 	    },
-            "_timestamp" : {
-                "enabled" : true
-            },
 	    "title": {
 		"type": "string",
 		"index": "analyzed",
@@ -31,6 +28,11 @@
                 "term_statistics": false,
 		"store": "yes"
 	    },
+            "cp_name": {
+                "type": "string",
+                "index": "no",
+                "store": "yes"
+            },
 	    "keys": {
 		"type": "string",
 		"index": "analyzed",
@@ -43,16 +45,36 @@
                 "term_statistics": false,
 		"store": "yes"
 	    },
-	    "price": {
-		"type": "integer",
+            "category": {
+                "type": "string",
+                "index": "not_analyzed",
+                "store": "yes"
+            },
+            "genre_id": {
+                "type": "integer",
+                "index": "not_analyzed",
+                "store": "yes"
+            },
+	    "open_date": {
+		"type": "long",
 		"index": "not_analyzed",
 		"store": "yes"
 	    },
+            "close_date": {
+                "type": "long",
+                "index": "not_analyzed",
+                "store": "yes"
+            },
 	    "url": {
 		"type": "string",
 		"index": "no",
 		"store": "yes"
 	    },
+            "image_url": {
+                "type": "string",
+                "index": "no",
+                "store": "yes"
+            },
             "score": {
                 "type": "float",
                 "index": "not_analyzed",
@@ -61,3 +83,4 @@
 	}
     }
 }
+
