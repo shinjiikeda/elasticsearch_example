@@ -4,14 +4,15 @@ facebook,フェイスブック
 rakuten,楽天
 amazon,アマゾン
 mixi,ミクシィ
-nintendo,任天堂
+twitter,ツイッター
+nintendo,任天堂,ニンテンドー,ニンテンドウ
 sega,セガ
 sony,ソニー
 toshiba,東芝
 fujitsu,富士通
 konami,コナミ
-東大,東京大学
-京大,京都大学
+東大,東京 大学
+京大,京都 大学
 docomo,ドコモ
 softbank,ソフトバンク
 microsoft,マイクロソフト
@@ -25,8 +26,8 @@ zoom,ズーム
 yamaha,ヤマハ
 fender,フェンダー
 gibson,ギブソン
-security,セキュリティ
-kaspersky,カスペルスキー
+security,セキュリティ,セキュリティー
+kaspersky,カス ペル スキー
 jazz,ジャズ
 classic,クラシック
 rock,ロック
@@ -35,3 +36,61 @@ blues,ブルース
 honda,ホンダ
 nissan,日産
 toyota,トヨタ
+volvo,ボルボ
+iphone,アイフォーン,アイフォン
+スマホ,スマートフォン
+アナ 雪,アナ と 雪 の 女王
+もも クロ,ももいろ クローバー
+ドラクエ,ドラゴン クエスト
+ドラえもん,どら えもん
+ibm,アイ ビー エム
+ヘッドホン,ヘッドフォン
+イヤホン,イヤフォン
+%,パーセント
+ニコ 動,ニコニコ 動画
+elecom,エレコム
+nike,ナイキ
+かばん,カバン
+バック,バッグ
+casio,カシオ
+デジカメ,デジタル カメラ
+canon,キャノン
+値段,価格
+yodobashi,ヨドバシ
+関空,関西 空港,関西 国際 空港
+コンビニエンスストア,コンビニ
+ファミマ,ファミリーマート,familymart
+ミスド,ミスター ドーナツ
+lawson,ローソン
+ツタヤ,tsutaya
+モンハン,モンスター ハンター
+スタバ,スター バックス
+sharp,シャープ
+hitachi,日立
+lenovo,レノボ
+asus,アスース
+aceer,エイサー
+ドリカム,dreams come true
+コスパ,コスト パフォーマンス
+コミケ,コミック マーケット
+ラノベ,ライトノベル
+sao,ソード アート オンライン
+kadokawa,角川
+スクエニ,スクエア エニックス
+online,オンライン
+hatena,はてな
+インフル,インフルエンザ
+コラボ,コラボレーション
+タワレコ,タワー レコード
+うつ病,鬱病
+o ' reilly,オライリー
+kindle,キンドル
+レスポール,レス ポール
+psvita,ps vita
+メタルギア,metal gear
+book off,ブックオフ
+hard off,ハードオフ
+xmas,クリスマス
+ハロウィーン,ハロウィン
+焼肉,焼き肉,ヤキ ニク
+できる,出来る,デキ る
