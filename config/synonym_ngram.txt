@@ -1,0 +1,10 @@
+yahoo => ヤフー
+amazon => アマゾン
+rakuten => 楽天
+google => グーグル
+facebook => フェイスブック
+mixi => ミクシィ
+twitter => ツイッター
+nintendo => 任天堂
+ニンテンドー => 任天堂
+ニンテンドウ => 任天堂

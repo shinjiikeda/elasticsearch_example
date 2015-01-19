@@ -1,7 +1,7 @@
 {
     "index" : {
-	"analysis" : {
-	    "analyzer" : {
+        "analysis" : {
+            "analyzer" : {
                 "jp_search_analyzer" : {
                     "type" : "custom",
                     "tokenizer" : "kuromoji_user_dict",
@@ -15,19 +15,26 @@
                 },
                 "ngram_search_analyzer" : {
                     "tokenizer" : "ngram_search_tokenizer",
-                    "filter": ["jp_synonym_filter"],
                     "char_filter": ["jp_mapping", "my_mapping"]
                 },
-		"ngram_index_analyzer" : {
-		    "tokenizer" : "ngram_index_tokenizer",
-		    "char_filter": ["jp_mapping", "my_mapping"]
-		}
+                "ngram_index_analyzer" : {
+                    "tokenizer" : "ngram_index_tokenizer",
+                    "char_filter": ["jp_mapping", "my_mapping"]
+                },
+                "ngram_search_analyzer_synonym" : {
+                    "tokenizer" : "ngram_search_tokenizer",
+                    "char_filter": ["jp_mapping", "ngram_syn_mapping", "my_mapping"]
+                },
+                "ngram_index_analyzer_synonym" : {
+                    "tokenizer" : "ngram_index_tokenizer",
+                    "char_filter": ["jp_mapping", "ngram_syn_mapping",  "my_mapping"]
+                }
             },
             "tokenizer" : {
                 "kuromoji_user_dict" : {
                    "type" : "kuromoji_tokenizer",
                    "mode" : "search",
-                   "discard_punctuation" : "false",
+                   "discard_punctuation" : "true",
                    "user_dictionary" : "userdict_jp.txt"
                 },
                 "ngram_index_tokenizer" : {
@@ -38,26 +45,35 @@
                 },
                 "ngram_search_tokenizer" : {
                     "type" : "nGram",
+                    "min_gram" : "1",
                     "max_gram" : "2",
                     "token_chars": [ "letter", "digit" ]
                 }
-	    },
+            },
             "filter": {
                 "jp_synonym_filter": {
                     "type": "synonym", 
                     "synonyms_path": "synonym_jp.txt"
                 }
             },
-	    "char_filter" : {
-		"jp_mapping" : {
-		    "type" : "mapping",
-		    "mappings_path" : "mapping_jp.txt"
-		},
+            "char_filter" : {
+                "jp_mapping" : {
+                    "type" : "mapping",
+                    "mappings_path" : "mapping_jp.txt"
+                },
+                "jp_mapping_kana_norm" : {
+                    "type" : "mapping",
+                    "mappings_path" : "mapping_jp_kana_norm.txt"
+                },
+                "ngram_syn_mapping" : {
+                    "type" : "mapping",
+                    "mappings_path" : "synonym_ngram.txt"
+                },
                 "my_mapping" : {
                     "type" : "mapping",
-                    "mappings" : ["・=> "]
+                    "mappings" : ["・=> ", "ウィ => ウイ", "ウェ => ウエ", "ウォ => ウオ"]
                 }
-	    }
-	}
+            }
+        }
     }
 }
