@@ -17,3 +17,13 @@ query
      }
     }
     '
+
+template
+==
+
+config/scripts/searchTempl.mustache
+
+template syntax
+http://mustache.github.io/mustache.5.html
+
+
