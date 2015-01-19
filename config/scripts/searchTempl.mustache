@@ -1,0 +1,66 @@
+{
+  "from": {{from}}{{^from}}0{{/from}},
+  "size": {{size}}{{^size}}10{{/size}},
+  "query": {
+    "filtered": {
+      "query": {
+        "function_score": {
+          "query": {
+            "query_string": {
+              "query": "{{query}}",
+              "fields": [
+                "title^2",
+                "desc^1"
+              ],
+              "use_dis_max": true,
+              "default_operator": "AND",
+              "auto_generate_phrase_queries": true
+            }
+          },
+          "script_score": {
+            "params": {
+              "dw": 1,
+              "sw": 1
+            },
+            "script": "dw * _score + sw * doc['score'].value"
+          },
+          "boost_mode": "replace"
+        }
+      },
+      "filter": {
+        "range": {
+          "price": {
+            "gte": {{price_min}}{{^price_min}}0{{/price_min}},
+            "lte": {{price_max}}{{^price_max}}2147483647{{/price_max}}
+          }
+        }
+      }
+    }
+  },
+  "highlight": {
+    "fields": {
+      "title": {
+        "pre_tags": [
+          "<b>"
+        ],
+        "post_tags": [
+          "</b>"
+        ],
+        "fragment_size": 30,
+        "number_of_fragments": 1,
+        "no_match_size": 30
+      },
+      "desc": {
+        "pre_tags": [
+          "<b>"
+        ],
+        "post_tags": [
+          "</b>"
+        ],
+        "fragment_size": 100,
+        "number_of_fragments": 1,
+        "no_match_size": 100
+      }
+    }
+  }
+}

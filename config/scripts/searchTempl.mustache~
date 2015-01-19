@@ -1,0 +1,40 @@
+{
+  "from": {{from}}{{^from}}0{{/from}},
+  "size": {{size}}{{^size}}10{{/size}},
+  "query": {
+    "filtered": {
+      "query": {
+        "function_score": {
+          "query": {
+            "query_string": {
+              "query": "{{query}}",
+              "fields": [
+                "title^2",
+                "desc^1"
+              ],
+              "use_dis_max": true,
+              "default_operator": "AND",
+              "auto_generate_phrase_queries": true
+            }
+          },
+          "script_score": {
+            "params": {
+              "dw": 1,
+              "sw": 1
+            },
+            "script": "dw * _score + sw * doc['score'].value"
+          },
+          "boost_mode": "replace"
+        }
+      },
+      "filter": {
+        "range": {
+          "price": {
+            "gte": {{price_min}}{{^price_min}}0{{/price_min}},
+            "lte": {{price_max}}{{^price_max}}2147483647{{/price_max}}
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,3 +1,9 @@
+
+
+query
+==
+
+curl -X GET http://localhost:9200/search/test/_search/template -d '
 {
   "template": {
     "file": "searchTempl"
@@ -10,3 +16,4 @@
     "price_max": 2147483647
   }
 }
+'
