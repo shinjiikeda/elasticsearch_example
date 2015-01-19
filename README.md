@@ -12,7 +12,7 @@ query
         "from": 0,
         "size": 10,
         "query": "test",
-        "price_from": 0,
+        "price_min": 0,
         "price_max": 2147483647
      }
     }
