@@ -17,7 +17,8 @@
                     "enabled" : false
                 },
                 "term_statistics": false,
-                "store": "yes"
+                "include_in_all": false,
+                "store": true
             },
             "desc": {
                 "type": "string",
@@ -26,7 +27,8 @@
                 "search_analyzer": "ngram_search_analyzer",
                 "term_vector":"with_positions_offsets",
                 "term_statistics": false,
-                "store": "yes"
+                "include_in_all": false,
+                "store": true
             },
             "keys": {
                 "type": "string",
@@ -38,22 +40,26 @@
                     "enabled" : false
                 },
                 "term_statistics": false,
-                "store": "yes"
+                "include_in_all": false,
+                "store": true
             },
             "price": {
                 "type": "integer",
                 "index": "not_analyzed",
-                "store": "yes"
+                "include_in_all": false,
+                "store": true
             },
             "url": {
                 "type": "string",
                 "index": "no",
-                "store": "yes"
+                "include_in_all": false,
+                "store": true
             },
             "score": {
                 "type": "float",
                 "index": "not_analyzed",
-                "store": "yes"
+                "include_in_all": false,
+                "store": true
             }
         }
     }
