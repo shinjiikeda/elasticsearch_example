@@ -1,4 +1,6 @@
 
+bin/plugin install elasticsearch/elasticsearch-analysis-kuromoji/2.x.x
+
 
 query
 ==
