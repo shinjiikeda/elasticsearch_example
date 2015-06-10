@@ -3,7 +3,7 @@
 
 cluster.name: cluster
 
-#node.name: "node1"
+node.name: ${HOSTNAME}
 
 node.master: true
 node.data: true
